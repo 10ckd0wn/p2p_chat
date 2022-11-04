@@ -93,9 +93,9 @@ func handleClient(node *Node) {
 		message := InputString()
 		splited := strings.Split(message, " ")
 		switch splited[0]{
-			case "/exit": os.Exit(0)
-			case "/network": node.PrintNetwork()
-			case "/connect": node.ConnectTo(splited[0:])
+			case "#exit": os.Exit(0)
+			case "#network": node.PrintNetwork()
+			case "#connect": node.ConnectTo(splited[0:])
 			default: node.SendMessageToAll(node.Address.IPv4+node.Address.Port+ " >>> " + message)
 		}
 	}	
